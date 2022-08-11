@@ -1,5 +1,5 @@
 // conditional statements
-
+//
 // Switch case -> It is not recommended to use
 // number = 0;
 
