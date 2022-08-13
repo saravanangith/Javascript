@@ -1,6 +1,6 @@
 // conditional statements
 // if, if - else, else if ladder, switch
-
+//
 // let age = 12;
 // if (age >= 18) {
 //   console.log("Eligible to vote");
