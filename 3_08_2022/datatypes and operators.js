@@ -1,5 +1,6 @@
 // statically typed vs dynamically typed
 
+//
 // Statically typed
 
 /*
