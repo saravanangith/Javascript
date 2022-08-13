@@ -50,7 +50,7 @@
 // last ha erukuratha kandupudikum so 20 than ans
 // console.log(news.lastIndexOf("India"));
 // let news = "India won the world India cup
-
+//
 // edhula "Indi i la erunthu start pani dnI eppidi pogum so zero  than ans kadasiya I ya pathutu compare panum
 // India fulla ha erukanu illana -1 eruntha 0 thu position ha print panm
 // console.log(news.lastIndexOf("India", 3));
