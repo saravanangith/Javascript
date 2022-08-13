@@ -2,7 +2,7 @@
 // fname="kk";
 // ram la memory create agi adhuku oru number kudukum athan address aprm antha address ku oru name tharum antha name than fname
 // edhu elathayum dns onu store panum os than entha process full ha seiyum
-
+//
 // javascript la oru character um string than neraya character senthathum string than
 var fname = "sara";
 // javascript negative number type number than decimal number type hu number than
