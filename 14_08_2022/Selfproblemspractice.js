@@ -4,6 +4,7 @@
 // let b = 30;
 
 // console.log(a + b);
+//
 
 // ########################################
 // 2. Maximum of two numbers
