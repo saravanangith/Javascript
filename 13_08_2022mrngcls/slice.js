@@ -9,7 +9,7 @@
 // slice always moves left to right
 
 // let news = "Indians";
-//
+
 //    I  N  D  I  A  N  S
 //    0  1  2  3  4  5  6
 //   -7 -6 -5 -4 -3 -2  -1
@@ -125,14 +125,19 @@
 
 // note while loop la semicolon vachrukan false vera potukan so adhoda end agidum kela poturukura
 // line while loop oda searthu ena while loop ha semicolon potu mudichutan so next line execute agi
+// while loop false nala semicolon ha reach panum aprm finish agidum nextline um execute agidum
 // vasanth nu print agum and false nala velaila vanthurum
-// while (false);
+
+// while (false); (or) //while(false){}
+
+// while (false) eppidi kudutha kela erukura log statement while loop oda attach agi erukum.
+
 // {
 //   console.log("vasanth");
 // }
 
 //  semicolon potathunala mudinjurum nextline pogathu
-// 10>5 our vati true agidum  line 136 adhoda mudinjurum execute agathu next line
+// 10>5  condition true agidum end agathu semicolon um reach agathu   line 138 adhoda mudinjurum execute agathu next line
 // while (10 > 5);
 // {
 //   console.log("vasanth");
@@ -158,3 +163,4 @@
 
 // console.log("print");
 // ########################################
+//
