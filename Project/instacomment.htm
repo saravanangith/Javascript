@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insta comment page</title>
+  </head>
+  <body>
+    <p>Welcome to Insta comment page <a href="insta.htm">Back</a></p>
+    <div id="root"></div>
+
+    <script>
+      // url la erunthu data va edukuren
+      const params = window.location.search.split("?")[1].split("&");
+      //   console.log(typeof params);
+
+      //   value matum prirchu edukuran
+      // doubt hu
+      var queryString = new Array();
+      for (var i = 0; i < params.length; i++) {
+        var key = params[i].split("=")[0];
+        var value = decodeURIComponent(params[i].split("=")[1]);
+        queryString[key] = value;
+      }
+      //   key value ha erukum value matum segregate pani edukuran
+      //   console.log(queryString["name"]);
+      var finaldata = queryString["name"];
+      console.log("POSTID-" + finaldata);
+      //   string ha erukum value atha number ha convert panuren
+      var numberdata = Number(finaldata);
+
+      const postid = document.createElement("h2");
+      postid.innerText = `${finaldata}`;
+      root.appendChild(postid);
+      //   edhula number ha join panirupan
+      const fetchurl =
+        "https://jsonplaceholder.typicode.com/comments?postId=" +
+        encodeURIComponent(numberdata);
+      fetch(fetchurl)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          for (let i = 0; i < 5; i++) {
+            const body = document.createElement("p");
+            body.innerText = `${data[i].body}`;
+            const name = document.createElement("h2");
+            name.innerText = `${data[i].name}`;
+
+            root.appendChild(name);
+            root.appendChild(body);
+          }
+        });
+    </script>
+  </body>
+</html>

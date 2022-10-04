@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <a href="instacomment.htm">click</a> -->
+    <script>
+      // https://jsonplaceholder.typicode.com/
+      const root = document.getElementById("root");
+      //fetch values
+      fetch("https://jsonplaceholder.typicode.com/posts")
+        .then((response) => response.json())
+        .then((data) => {
+          //removed duplicates
+          let names = Object.entries(data);
+          console.log(typeof names);
+          const result = data.reduce((finalArray, current) => {
+            let obj = finalArray.find((item) => item.userId === current.userId);
+            if (obj) {
+              return finalArray;
+            }
+            return finalArray.concat([current]);
+          }, []);
+          console.log("result : ->", result);
+          //creating dom elements
+          for (let i = 0; i < result.length; i++) {
+            const body = document.createElement("p");
+            body.innerText = `${result[i].body}`;
+            const title1 = document.createElement("h2");
+            title1.innerText = `${result[i].title}`;
+            //added comment button
+            const comment = document.createElement("Button");
+            comment.classList.add("commentclass");
+            comment.innerText = "comment";
+            const id = document.createElement("p");
+            id.innerText = `${result[i].userId}`;
+            root.appendChild(title1);
+            root.appendChild(body);
+            root.appendChild(comment);
+            root.appendChild(id);
+            console.log(result[i].userId);
+
+            // navigate to the next page
+            document
+              // click pana sola particular id pass panurathuku edhu
+              .querySelectorAll(".commentclass")
+              [i].addEventListener("click", redirectFunction);
+            function redirectFunction() {
+              const val = result[i].userId;
+              //   url la send panuren nex page ku id adhuku than edhu
+              var url = "instacomment.htm?name=" + encodeURIComponent(val);
+              window.location.href = url;
+
+              //   window.location.replace("instacomment.htm");
+            }
+            //      const val=result[i].userId;
+            //         var url = "Page2.htm?name=" + encodeURIComponent(name) + "&technology=" + encodeURIComponent(tech);
+            // window.location.href = url;
+          }
+        });
+    </script>
+  </body>
+</html>
